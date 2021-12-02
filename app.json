@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "pomocalpwd",
+    "slug": "pomocalpwd",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "pomocalpwd"
+}
