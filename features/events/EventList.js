@@ -24,7 +24,7 @@ export default function EventList() {
   });
 
   const renderItem = ({ item }) => {
-    return <Text>{item.title}</Text>;
+    return <Text>- {item.title}</Text>;
   };
 
   const [taskTitle, setTaskTitle] = useState('');
@@ -37,22 +37,21 @@ export default function EventList() {
   return (
     <View>
       <Calendar
+      
         markedDates={events}
         current={selectedDate}
         onDayPress={(day) => {
           setSelectedDate(day.dateString);
+          
         }}
       />
-      <Button
-        title="mark date"
-        onPress={() => {
-          dispatch(markDate(selectedDate));
-        }}
-      ></Button>
+      
       <Button
         title="Add task"
         onPress={() => {
+          dispatch(markDate(selectedDate))
           dispatch(addTask({ selectedDate, taskTitle }));
+          setTaskTitle('')
         }}
       ></Button>
       <TaskForm taskTitle={taskTitle} setTaskTitle={setTaskTitle} />

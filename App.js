@@ -23,5 +23,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: Dimensions.get("window").height*0.1,
   },
 });
