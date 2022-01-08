@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 export const eventsList = createSlice({
   name: 'events',
   initialState: {
-    dates: { '2021-01-07': { selected: true, marked: true, selectedColor: 'red' }, 
-    '2021-01-08': {  selected: false, marked: true, selectedColor: 'orange' } },
+    dates: { '2022-01-07': { marked: true, selectedColor: 'rgba(193, 66, 66, 0.3)' }, 
+    '2022-01-08': {  selected: false, marked: true, selectedColor: 'orange' } },
     tasks: {
       '2021-12-04': [{ title: 'figure out redux', createdAt: Date.now() }],
     },

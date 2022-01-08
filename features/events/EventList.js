@@ -30,15 +30,16 @@ export default function EventList() {
   const [taskTitle, setTaskTitle] = useState('');
 
 
-  console.log(tasks, 'tasks');
+  // console.log(tasks, 'tasks');
 
-  console.log(selectedDate, '<<<selected date');
-  console.log(events, '<<events');
+  // console.log(selectedDate, '<<<selected date');
+  // console.log(events, '<<events');
+  console.log({...events, [selectedDate] : {selected: true, selectedColor: "orange"}})
   return (
     <View>
       <Calendar
-      
-        markedDates={events}
+      // the marked dates here use the stored events, spread and then added the current selected day to save having to constantly updated the store
+        markedDates={{...events, [selectedDate] : {selected: true, selectedColor: "lightblue"}}}
         current={selectedDate}
         onDayPress={(day) => {
           setSelectedDate(day.dateString);
@@ -54,7 +55,9 @@ export default function EventList() {
           setTaskTitle('')
         }}
       ></Button>
+      <Button title="+" />
       <TaskForm taskTitle={taskTitle} setTaskTitle={setTaskTitle} />
+
       <FlatList
         keyExtractor={(item) => item.createdAt}
         data={tasks[selectedDate]}
