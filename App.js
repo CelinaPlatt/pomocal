@@ -1,18 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Button, Dimensions, StyleSheet, Text, View } from 'react-native';
 import store from './app/store';
 import { Provider } from 'react-redux';
 import EventList from './features/events/EventList';
+import { FormScreen } from './screens/FormScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+
+
+const Stack = createNativeStackNavigator()
 
 export default function App(props) {
 
 
   return (
     <Provider store={store}>
-    <View style={styles.container}>
-     <EventList/>
-    </View>
+    
+      <NavigationContainer>
+      <Stack.Navigator>
+
+     <Stack.Screen name="EventList" component={EventList}/>
+     <Stack.Screen name="FormScreen" component={FormScreen} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
+    
     </Provider>
   );
 }

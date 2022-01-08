@@ -8,7 +8,9 @@ import TaskForm from '../../components/TaskForm';
 import { FlatList } from 'react-native-gesture-handler';
 import moment from 'moment';
 
-export default function EventList() {
+export default function EventList(props) {
+
+  const {navigation} = props
   const events = useSelector((state) => {
     return state.eventsList.dates;
   });
@@ -55,7 +57,7 @@ export default function EventList() {
           setTaskTitle('')
         }}
       ></Button>
-      <Button title="+" />
+      <Button title="+" onPress={()=>(navigation.navigate("FormScreen"))}/>
       <TaskForm taskTitle={taskTitle} setTaskTitle={setTaskTitle} />
 
       <FlatList

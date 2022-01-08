@@ -7,6 +7,9 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "@react-native-community/datetimepicker": "^5.1.0",
+    "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
     "@reduxjs/toolkit": "^1.6.2",
     "expo": "~43.0.2",
     "expo-splash-screen": "~0.13.5",
